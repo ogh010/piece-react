@@ -6,8 +6,9 @@ COPY package.json package-lock.json ./
 
 RUN npm install
 
-COPY . ./
+RUN mkdir ./build
+COPY ./build ./build
 
 EXPOSE 3000
 
-ENTRYPOINT ["npm", "run", "start"]
+ENTRYPOINT ["serve", "-s", "build"]
