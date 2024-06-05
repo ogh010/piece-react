@@ -1,14 +1,13 @@
 FROM node:21.7.3-alpine
 
-WORKDIR /
+WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json .
 
 RUN npm install
 
-RUN mkdir ./build
-COPY ./build ./build
+COPY . .
 
 EXPOSE 3000
 
-ENTRYPOINT ["serve", "-s", "build"]
+ENTRYPOINT ["npm", "start"]
