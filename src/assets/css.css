@@ -1,0 +1,8 @@
+/* 피스 css */
+@import url('./App.scss');
+/* 리셋 */
+@import url('./reset.css'); 
+/* 공통 컴포넌트 */
+@import url('./common.scss');
+/* 간격 */
+@import url('./style.css');

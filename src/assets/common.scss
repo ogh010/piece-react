@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* 
+* 피스 버튼 : pBtn (var(--primary-color))
+* 카톡 버튼 : kakao (#FDE500)
+* google 버튼 : google
+* 검정 버튼 : black
+* 하얀 버튼 : white
+* 삭제 버튼 : pink (#FFC3B7)
+* 
+*/
+
+.pBtn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+  background-color: var(--primary-color);
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  &:hover {
+    background-color: #679fff;
+  }
+  &.kakao {
+    color: #000;
+    background-color: #FDE500;
+    &:hover {
+      background-color: #fff27f;
+    }
+  }
+  &.google {
+    color: #000;
+    background-color: #ffffff;
+    &:hover {
+      background-color: #e1e1e1;
+    }
+  }
+  &.black {
+    color: #fff;
+    background-color: #08080a;
+    &:hover {
+      background-color: #3d3d45;
+    }
+  }
+  &.pink {
+    color: #fff;
+    background-color: #fc6b4e;
+    &:hover {
+      background-color: #ff917b;
+    }
+  }
+}

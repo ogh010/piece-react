@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+// ************ rem 단위 ************
+$base-size: 16;
+//Function to convert px value into rem
+//You can replace rem with any other value you want (rem is most preferred value for web)
+@function size($target, $context: $base-size) {
+  @return calc($target / $context) * 1em;
+}
+// ************ rem 단위 ************
+
+// ************ 믹스인 모음 ************
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+// ************ 믹스인 모음 ************
+
+html{height: 100vh; font-family: 'NanumSquareRound' !important;}
+body{height: 100%;}
+header{@include flex-between; background-color: #fff; height: 50px; padding: 0 16px;
+    > * {
+        width: 26px; height: 26px; 
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .logo{background-image: url('./img/logo01_G.png'); width: 80px !important;}
+    .heart{background-image: url('./img/heart.png'); }
+    .back{background-image: url('./img/chevron-left.svg'); }
+    .next{background-image: url('./img/chevron-right.svg'); }
+    .close{background-image: url('./img/close.svg'); }
+}
+#root{height: 100%;}
+#wrap{display: flex; justify-content: center; height: 100%;}
+#leftWrap{width: 400px; position: relative;
+    .leftCon{
+        width: 100%;
+        font-size: size(16);
+        position: absolute;
+        top: 50%; left: 50%; transform: translate(-50%,-50%);
+        text-align: center;
+        p{
+            &:nth-last-child(1){
+                @include flex-center;
+                margin-top: 16px;
+                font-size: size(18);
+            }
+        }
+        b{
+            color: var(--primary-color);
+            font-weight: 900;
+        }
+        .logo{
+            margin-left: 10px;
+            background-image: url('./img/logo.png');
+            width: 150px; height: 60px; display: inline-block;
+            background-size: contain; background-repeat: no-repeat;
+        }
+    }
+}
+#rightWrap{width: 400px; background : linear-gradient(155deg, #fdeff5, #fff4e6, #f0ffd8); border: 1px solid #e8e8e8;}
+
+// 미디어쿼리
+@media screen and (max-width: 420px){
+    #leftWrap{display: none;}
+    #rightWrap{width: 100%;}
+}
