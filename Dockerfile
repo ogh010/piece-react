@@ -1,6 +1,6 @@
 FROM node:21.7.3-alpine
 
-WORKDIR /react-to-do/frontend
+WORKDIR /
 
 COPY package.json package-lock.json ./
 
@@ -10,4 +10,4 @@ COPY . ./
 
 EXPOSE 3000
 
-ENTRYPOINT ["npm", "run", "start"]
+CMD ["npm", "run", " start"]
