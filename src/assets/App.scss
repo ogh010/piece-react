@@ -39,7 +39,7 @@ $base-size: 16;
   }
 // ************ 믹스인 모음 ************
 
-html{height: 100vh; font-family: 'NanumSquareRound' !important;}
+html{height: 100vh; }
 body{height: 100%;}
 header{@include flex-between; background-color: #fff; height: 50px; padding: 0 16px;
     > * {

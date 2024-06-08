@@ -39,6 +39,11 @@
     height: calc(100vh - 110px);
 }
 
+@mixin background-img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
 // ************ 믹스인 모음 ************
 
 // Join 회원가입 
@@ -50,16 +55,12 @@
             display: block; margin: auto;
             &.img1{
                 width: 200px; height: 200px;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
+                @include background-img;
                 background-image: url('./img/dog.png');
             }
             &.logo{
                 width: 300px; height: 100px;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
+                @include background-img;
                 background-image: url('./img/logo.png');
                 margin-top: -60px;
             }
@@ -102,9 +103,7 @@
                     width: 60px; height: 60px; border: 1px solid #c7c7c79c;
                     border-radius: 50%; margin: auto; margin-bottom: 4px;
                     background-image: url('./img/winter.jpeg');
-                    background-position: center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
+                    @include background-img; background-size: cover;
                 }
                 span{display: block; text-align: center; margin: auto; font-size: 12px;
                 width: 60px; text-overflow: ellipsis; white-space: nowrap;
@@ -113,12 +112,50 @@
         }
     }
     .mainBox{
-        background-color: #ffffffc9; min-height: calc(100vh - 205px); 
-        ul{
-            @include flex-column;
-            li{
-                height: 300px; background-color: rgb(255, 224, 229); margin-bottom: 4px;
-                div{}
+        background-color: transparent; min-height: calc(100vh - 205px); 
+        
+    }
+}
+
+.mainList{
+    @include flex-column;
+    article{
+        background-color: #ffffffc3; margin-bottom: 4px; width: 100%;
+        .top{
+            @include flex-between; height: 60px; padding: 0 16px;
+            .left{
+                @include flex-start; width: calc(100% - 56px);
+                .circle{
+                    @include background-img;
+                    width: 30px; height: 30px; border: 1px solid #c7c7c79c;
+                    border-radius: 50%; margin-right: 10px; flex: 0 0 auto;
+                    background-image: url('./img/winter.jpeg'); background-size: cover
+                }
+                span{font-size: 14px; width: calc(100% - 32px); display: block; }
+            }
+            .menu{
+                width: 30px; height: 60px; background-image: url('./img/more.svg');
+                @include background-img; opacity: 0.7;
+            }
+        }
+        .content{
+            img{width: 100%}
+        }
+        .bottom{ padding: 0 16px 10px 16px;
+            .icoBox{
+                @include flex-start; padding: 4px 0 8px 0;
+                span {
+                    display: block; font-size: 20px; cursor: pointer;
+                    &:nth-child(1) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            p{font-size: 14px; margin-bottom: 6px; line-height: 18px; word-break: break-word;
+                b{display: inline-block; margin-right: 10px}
+            }
+            .gray{display: block; font-size: 13px; color: #5a5a5a; margin-bottom: 6px;
+                &:nth-child(2){margin-bottom: 0}
             }
         }
     }
