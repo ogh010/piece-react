@@ -6,4 +6,10 @@ services:
     container_name: piece-react
     ports:
       - "${PORT}:${PORT}"
+    networks:
+      - piece-network
     restart: unless-stopped
+
+networks:
+  piece-network:
+    external: true
