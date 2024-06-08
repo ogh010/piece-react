@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/*
+* 레이아웃 scss
+*/
+
+// ************ 믹스인 모음 ************
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+@mixin flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 3px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
+@mixin content-height {
+    overflow-y: scroll;
+    height: calc(100vh - 110px);
+}
+
+// ************ 믹스인 모음 ************
+
+// Join 회원가입 
+#join{padding: 16px; @include flex-column; width: calc(100% - 32px);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    .imgBox{
+        margin: auto; margin-bottom: 100px;
+        > span {
+            display: block; margin: auto;
+            &.img1{
+                width: 200px; height: 200px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url('./img/dog.png');
+            }
+            &.logo{
+                width: 300px; height: 100px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url('./img/logo.png');
+                margin-top: -60px;
+            }
+        }
+        p { text-align: center;}
+    }
+    .btnBox{
+        > .pBtn{margin-bottom: 10px;}
+        .pull { 
+            animation: floating 1.4s infinite ease-in-out;
+            top: -13px; font-size: 12px; margin: auto; text-align: center; line-height: 20px;
+            position:relative; width:140px; height:20px; color: #fff; 
+            border-radius: 10px; background-color: #b0b0b0;
+            &:after {
+                content:""; position: absolute; 
+                right: 66px; top: 20px; 
+                border-left: 6px solid transparent; 
+                border-right: 6px solid transparent; 
+                border-top: 6px solid #b0b0b0;
+            }
+        }
+        
+    }
+}
+
+// Main 메인페이지
+#main{ @include content-height; 
+    .storyBox{
+        width: 100%;
+        height: 95px;
+        @include flex-start;
+        ul{
+            width: 100%; overflow-x: scroll; flex-wrap: nowrap;
+            @include flex-start; padding-top: 4px;
+            // &::-webkit-scrollbar{display: none;}
+            li.circleBox{
+                flex: 0 0 auto;
+                height: 80px; width: 80px; 
+                .circle{
+                    width: 60px; height: 60px; border: 1px solid #c7c7c79c;
+                    border-radius: 50%; margin: auto; margin-bottom: 4px;
+                    background-image: url('./img/winter.jpeg');
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                span{display: block; text-align: center; margin: auto; font-size: 12px;
+                width: 60px; text-overflow: ellipsis; white-space: nowrap;
+                overflow: hidden;}
+            }
+        }
+    }
+    .mainBox{
+        background-color: #ffffffc9; min-height: calc(100vh - 205px); 
+        ul{
+            @include flex-column;
+            li{
+                height: 300px; background-color: rgb(255, 224, 229); margin-bottom: 4px;
+                div{}
+            }
+        }
+    }
+}
+
+// Notice 공지사항 페이지
+#notice{ @include content-height; 
+    .noticeBox{ @include flex-column; 
+        .box{ border-bottom: 1px solid #d6d6d666; background-color: #ffffff87; padding: 16px;
+            .date{display: block; font-size: 14px; margin-bottom: 10px;}
+            .list{ @include flex-column; 
+                .item{ @include flex-start; height: 60px; width: 100%; cursor: pointer; transition: 0.2s;
+                    &:hover{background-color: #95959514; border-radius: 4px;}
+                    .circle{width: 40px; height: 40px;
+                        flex: 0 0 auto;
+                        border-radius: 50%;  
+                        border: 1px solid #c7c7c79c; 
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        background-image: url('./img/winter.jpeg');}
+                    p{font-size: 12px; width: calc(100% - 80px); padding: 0 10px; line-height: 14px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;}
+                    .img{width: 40px; height: 40px; 
+                        flex: 0 0 auto;
+                        background-color: #fff;  
+                        border: 1px solid #c7c7c79c;}
+                }
+            }
+        }
+    }
+}
+
+// User 유저페이지
+#user { @include content-height; 
+    .userBox{
+        padding: 16px; background-color: #ffffff83;
+        .id{font-weight: bold; margin-bottom: 10px; font-size: 18px}
+        .info{
+            @include flex-start;
+            .circle{
+                width: 60px; height: 60px; border: 1px solid #c7c7c79c; margin-right: 16px; flex: 0 0 auto;
+                    border-radius: 50%; 
+                    background-image: url('./img/winter.jpeg');
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+            }
+            ul{
+                width: calc(100% - 54px);
+                @include flex-between;
+                li{
+                    @include flex-column;
+                    text-align: center;
+                    width: calc(100% / 3);
+                    span {
+                        &:nth-child(2){font-size: 10px; margin-top: 4px;}
+                    }
+                }
+            }
+        }
+    }
+    .imgBox{
+        margin-left: 4px; margin-top: 2px;
+        ul{
+            @include flex-start; flex-wrap: wrap;
+            li{
+                width: 32%; height: 120px;
+                flex: 0 0 auto; 
+                background-color: #ffffffb3; margin: 2px;
+            }
+        }
+    }
+}

@@ -6,3 +6,5 @@
 @import url('./common.scss');
 /* 간격 */
 @import url('./style.css');
+/* 레이아웃 */
+@import url('./layout.scss');

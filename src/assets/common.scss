@@ -24,18 +24,26 @@
     background-color: #679fff;
   }
   &.kakao {
+    display: flex; justify-content: center; align-items: center;
     color: #000;
     background-color: #FDE500;
     &:hover {
       background-color: #fff27f;
     }
+    .ico{width: 18px; height: 18px; display: block; margin-right: 4px;
+    background-image: url('./img/kakao.png');
+    background-size: contain; background-position: center; background-repeat: no-repeat;}
   }
   &.google {
+    display: flex; justify-content: center; align-items: center;
     color: #000;
     background-color: #ffffff;
     &:hover {
       background-color: #e1e1e1;
     }
+    .ico{width: 14px; height: 14px; display: block; margin-right: 4px;
+      background-image: url('./img/google.png');
+      background-size: contain; background-position: center; background-repeat: no-repeat;}
   }
   &.black {
     color: #fff;
@@ -52,3 +60,31 @@
     }
   }
 }
+
+/*
+스크롤바 css 커스텀
+*/
+
+/* 스크롤바의 전체 트랙 */
+::-webkit-scrollbar {
+  width: 6px; /* 스크롤바의 너비 */
+  height: 6px; /* 수평 스크롤바의 높이 */
+}
+
+/* 스크롤바 트랙 */
+::-webkit-scrollbar-track {
+  background: #ffffff94; /* 트랙의 배경색 */
+  border-radius: 10px; /* 트랙의 모서리 둥글기 */
+}
+
+/* 스크롤바의 핸들 */
+::-webkit-scrollbar-thumb {
+  background: #fcdbe9; /* 핸들의 배경색 */
+  border-radius: 10px; /* 핸들의 모서리 둥글기 */
+}
+
+/* 스크롤바 핸들 위에 마우스를 올렸을 때 */
+::-webkit-scrollbar-thumb:hover {
+  background: #bebebe; /* 핸들의 배경색 (hover 상태) */
+}
+

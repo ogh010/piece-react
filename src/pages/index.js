@@ -1,4 +1,6 @@
-import CommonBtn from "./CommonBtn";
-import CommonHeader from "./CommonHeader";
+import Join from "./Join";
+import Main from "./Main";
+import Notice from "./Notice";
+import User from "./User";
 
-export {CommonBtn,CommonHeader}
+export {Join,Main,Notice,User}

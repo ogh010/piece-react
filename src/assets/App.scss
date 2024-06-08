@@ -24,22 +24,54 @@ $base-size: 16;
     justify-content: space-between;
     align-items: center
 }
+@mixin ico-img {
+    width: 26px; height: 26px; 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@keyframes shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
 // ************ 믹스인 모음 ************
 
 html{height: 100vh; font-family: 'NanumSquareRound' !important;}
 body{height: 100%;}
 header{@include flex-between; background-color: #fff; height: 50px; padding: 0 16px;
     > * {
-        width: 26px; height: 26px; 
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        @include ico-img; transition: 0.2s;
+        &:hover{opacity: 0.5; cursor: pointer;}
     }
     .logo{background-image: url('./img/logo01_G.png'); width: 80px !important;}
-    .heart{background-image: url('./img/heart.png'); }
+    .heart{background-image: url('./img/heart.png');
+        &:hover{animation: shaking 0.15s infinite;}
+    }
     .back{background-image: url('./img/chevron-left.svg'); }
     .next{background-image: url('./img/chevron-right.svg'); }
     .close{background-image: url('./img/close.svg'); }
+}
+footer{background-color: #fff; position: absolute; bottom: 0; width: 100%;
+    ul { @include flex-between; height: 60px; padding: 0 16px;
+        > * {
+            transition: 0.2s;
+            &:hover{opacity: 0.5; cursor: pointer;}
+        }
+        li { width:calc(100% / 3) !important; height: 60px; @include ico-img;
+            &.home{background-image: url('./img/home-d.svg'); 
+                &.on{background-image: url('./img/home-p.svg');}
+            }
+            &.add{background-image: url('./img/plus-circle-d.svg'); 
+                &.on{background-image: url('./img/plus-circle-p.svg');}
+            }
+            &.user{background-image: url('./img/user-d.svg'); 
+                &.on{background-image: url('./img/user-p.svg');}
+            }
+        }
+    }
 }
 #root{height: 100%;}
 #wrap{display: flex; justify-content: center; height: 100%;}
@@ -69,7 +101,7 @@ header{@include flex-between; background-color: #fff; height: 50px; padding: 0 1
         }
     }
 }
-#rightWrap{width: 400px; background : linear-gradient(155deg, #fdeff5, #fff4e6, #f0ffd8); border: 1px solid #e8e8e8;}
+#rightWrap{width: 400px; background : linear-gradient(155deg, #fdeff5, #fff4e6, #f0ffd8); border: 1px solid #e8e8e8; position: relative;}
 
 // 미디어쿼리
 @media screen and (max-width: 420px){

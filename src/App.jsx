@@ -1,15 +1,13 @@
 import './assets/css.css'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { CommonBtn,CommonHeader } from './pages/index';
+import { CommonBtn,CommonHeader, CommonFooter } from './components/index';
+import {Join, Main, Notice, User} from './pages/index'
 
 function App() {
 
   return (
     <>
-      {/* <Routes>
-        <Route >
-      </Routes> */}
       <div id='wrap'>
         <div id='leftWrap'>
           <div className='leftCon'>
@@ -19,8 +17,15 @@ function App() {
         </div>
         <div id='rightWrap'>
           <Routes>
+            {/* 공통 컴포넌트 헤더, 푸터, 버튼 */}
             <Route path='/commonheader' element={<CommonHeader />} /> 
             <Route path='/commonbtn' element={<CommonBtn />} /> 
+            <Route path='/commonfooter' element={<CommonFooter />} /> 
+            {/* pages */}
+            <Route path='/join' element={<Join />} />          
+            <Route path='/main' element={<Main />} />          
+            <Route path='/notice' element={<Notice />} />          
+            <Route path='/user' element={<User />} />          
           </Routes>
         </div>
       </div>
