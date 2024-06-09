@@ -133,7 +133,7 @@
             }
             .menu{
                 width: 30px; height: 60px; background-image: url('./img/more.svg');
-                @include background-img; opacity: 0.7;
+                @include background-img; opacity: 0.7; cursor: pointer;
             }
         }
         .content{
@@ -185,6 +185,8 @@
                         flex: 0 0 auto;
                         background-color: #fff;  
                         border: 1px solid #c7c7c79c;
+                        background-image: url('./img/smaple04.jpeg');
+                        @include background-img; background-size: cover;
                     }
                 }
             }
@@ -228,8 +230,27 @@
             li{
                 width: 32%; height: 120px;
                 flex: 0 0 auto; 
-                background-color: #ffffffb3; margin: 2px;
+                margin: 2px;
+                @include background-img;
+                background-image: url('./img/smaple04.jpeg'); background-size: cover;
+                cursor: pointer;
+                .descrip {
+                    text-align: center;
+                    line-height: 120px; 
+                    font-size: 14px;
+                    display: block; transition: 0.2s;
+                    opacity: 0; font-weight: bold;
+                    &:hover {opacity: 1;}
+                }
+            }
+            & :hover{
+                background-color: #ffffff84;
             }
         }
     }
+}
+
+// Detail 게시물 상세페이지
+#detail{
+    @include content-height; 
 }

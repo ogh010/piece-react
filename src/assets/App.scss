@@ -53,6 +53,10 @@ header{@include flex-between; background-color: #fff; height: 50px; padding: 0 1
     .back{background-image: url('./img/chevron-left.svg'); }
     .next{background-image: url('./img/chevron-right.svg'); }
     .close{background-image: url('./img/close.svg'); }
+    .setting{background-image: url('./img/settings.svg'); 
+        height: 22px; width: 22px; position: relative;
+        &:hover{opacity: 1; cursor: pointer;}
+    }
 }
 footer{background-color: #fff; position: absolute; bottom: 0; width: 100%;
     ul { @include flex-between; height: 60px; padding: 0 16px;

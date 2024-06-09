@@ -119,3 +119,32 @@
 }
 
 
+// 테스트
+/* 기본 목록 스타일 */
+.setting-menu {
+  list-style: none; /* 기본 목록 마커 제거 */
+  padding: 0; /* 내부 패딩 제거 */
+  margin: 0; /* 외부 여백 제거 */
+  font-size: 14px;
+  position: absolute;
+  // width: 80px;
+  text-align: center; 
+  left: -110px; top: 20px; background-color: #fff; 
+  border: 1px solid #3d3d45;
+  border-radius: 10px;
+}
+
+.menu-item {
+  padding: 10px; /* 각 항목의 상하 여백 설정 */
+  border-bottom: 1px solid #ddd; /* 항목 사이의 구분선 설정 */
+}
+
+.menu-item:last-child {
+  border-bottom: none; /* 마지막 항목의 하단 구분선 제거 */
+}
+
+/* 마우스 오버 시 배경 색상 변경 */
+.menu-item:hover {
+  color: #679fff;
+}
+

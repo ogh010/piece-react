@@ -2,7 +2,7 @@ import './assets/css.css'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { CommonBtn,CommonHeader, CommonFooter } from './components/index';
-import {Join, Main, Notice, User} from './pages/index'
+import {Join, Main, Notice, User, Detail} from './pages/index'
 
 function App() {
 
@@ -26,6 +26,7 @@ function App() {
             <Route path='/main' element={<Main />} />          
             <Route path='/notice' element={<Notice />} />          
             <Route path='/user' element={<User />} />          
+            <Route path='/detail' element={<Detail />} />          
           </Routes>
         </div>
       </div>

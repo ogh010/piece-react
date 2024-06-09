@@ -4,8 +4,13 @@ import sample02 from '../assets/img/sample02.jpg'
 import sample04 from '../assets/img/smaple04.jpeg'
 import { useState } from 'react';
 import Commnet from '../components/Commnet'
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
+    const navigate = useNavigate();
+    const move = (val) => {
+        navigate(val)
+    }
     // 하트 아이콘 토글
     const [heart,setHeart] = useState('🩶');
     const toggleHeart = () => {
@@ -25,7 +30,7 @@ const Main = () => {
     <>
         <header>
             <div className='logo'></div>
-            <div className='heart'></div>
+            <div className='heart' onClick={() => move('/notice')}></div>
         </header>
         {/* onClose,open 속성을 전달하여 팝업 상태 제어 */}
         <Commnet onClose={handleclose} open={open}/>
@@ -117,7 +122,7 @@ const Main = () => {
             <ul>
                 <li className='home on'></li>
                 <li className='add'></li>
-                <li className='user'></li>
+                <li className='user' onClick={()=>move('/user')}></li>
             </ul>
         </footer>
     </>
