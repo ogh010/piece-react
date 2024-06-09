@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import 'layout';
 
 /* 
 * 피스 버튼 : pBtn (var(--primary-color))
@@ -87,4 +88,34 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #bebebe; /* 핸들의 배경색 (hover 상태) */
 }
+
+/*
+* 팝업 css
+*/
+.css-zw3mfo-MuiModal-root-MuiDialog-root{position: absolute !important;}
+.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop{position: absolute !important; }
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root{font-size: 1rem !important;}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{width: 100%;}
+
+// 팝업 > 댓글 팝업
+.commnetBox{
+  li{@include flex-between; padding: 0 0 16px;
+    .circle{
+      width: 30px; height: 30px; border: 1px solid #c7c7c79c;
+      border-radius: 50%; 
+      background-image: url('./img/young.jpeg');
+      @include background-img; background-size: cover; flex: 0 0 auto;
+    }
+    .text{
+      font-size: 12px; width: calc(100% - 52px); padding-left: 16px;
+      > * {line-height: 16px; word-break: break-all;}
+      .date{
+        color: rgb(85, 85, 85); font-size: 10px; display: inline-block;
+      }
+    }
+    .heart {width: 20px; flex: 0 0 auto; margin-left: 16px; cursor: pointer;} 
+    &:last-child{padding: 0 0 0;}
+  }
+}
+
 
