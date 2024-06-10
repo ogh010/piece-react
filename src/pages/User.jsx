@@ -15,7 +15,7 @@ const User = () => {
 
     const handleLogout = () => {
         console.log('로그아웃');
-        const confirmLogout = window.confirm('정말 로그인 하시겠습니까?');
+        const confirmLogout = window.confirm('정말 로그아웃 하시겠습니까?');
         if(confirmLogout) {
             navigate('/join');
         }

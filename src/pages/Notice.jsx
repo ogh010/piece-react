@@ -18,17 +18,17 @@ const Notice = () => {
                     <div className='box'>
                         <span className='date'>2024년 6월 7일</span>
                         <div className='list'>
-                            <div className='item'>
+                            <div className='item' onClick={()=>move('/detail')}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
                             </div>
-                            <div className='item'>
+                            <div className='item' onClick={()=>move('/detail')}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
                             </div>
-                            <div className='item'>
+                            <div className='item' onClick={()=>move('/detail')}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
@@ -38,7 +38,7 @@ const Notice = () => {
                     <div className='box'>
                         <span className='date'>2024년 6월 5일</span>
                         <div className='list'>
-                            <div className='item'>
+                            <div className='item' onClick={()=>move('/detail')}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
@@ -48,7 +48,7 @@ const Notice = () => {
                     <div className='box'>
                         <span className='date'>2024년 6월 3일</span>
                         <div className='list'>
-                            <div className='item'>
+                            <div className='item' onClick={()=>move('/detail')}>
                                 <div className='circle'></div>
                                 <p>winter님이 댓글을 달았습니다. : 맞팔해요~🩵</p>
                                 <div className='img'></div>
