@@ -1,12 +1,12 @@
 import sample04 from '../assets/img/smaple04.jpeg'
 import {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
+import useMove from '../hooks/useMove';
 
 const Detail = () => {
-    const navigate = useNavigate();
-    const move = (val) => {
-        navigate(val)
-    }
+    const moveToPrev = useMove(-1);
+    const moveToMain = useMove('/main');
+    const moveToUser = useMove('/user');
+
     // 하트 아이콘 토글
     const [heart,setHeart] = useState('🩶');
     const toggleHeart = () => {
@@ -15,7 +15,7 @@ const Detail = () => {
   return (
     <>
         <header>
-            <div className='back' onClick={() => move(-1)}></div>
+            <div className='back' onClick={moveToPrev}></div>
             <div></div>
         </header>
 
@@ -49,9 +49,9 @@ const Detail = () => {
     
         <footer>
             <ul>
-                <li className='home' onClick={() => move('/main')}></li>
+                <li className='home' onClick={moveToMain}></li>
                 <li className='add'></li>
-                <li className='user' onClick={() => move('/user')}></li>
+                <li className='user' onClick={moveToUser}></li>
             </ul>
         </footer>
     </>

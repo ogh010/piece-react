@@ -1,11 +1,11 @@
 import {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
+import useMove from '../hooks/useMove';
 
 const User = () => {
-    const navigate = useNavigate();
-    const move = (val) => {
-        navigate(val);
-    }
+    const moveToPrev = useMove(-1);
+    const moveToDetail = useMove('/detail');
+    const moveToMain = useMove('/main');
+    const moveToJoin = useMove('/join');
 
     // 메뉴 토글
     const [ isMenuOpen, setIsMenuOpen ] = useState(false);
@@ -17,13 +17,13 @@ const User = () => {
         console.log('로그아웃');
         const confirmLogout = window.confirm('정말 로그아웃 하시겠습니까?');
         if(confirmLogout) {
-            navigate('/join');
+            moveToJoin();
         }
     }
     return (
         <>
         <header>
-                <div className='back' onClick={() => move(-1)}></div>
+                <div className='back' onClick={moveToPrev}></div>
                 <div className='setting' onClick={toggleMenu}>
                     {isMenuOpen && 
                          <ul className="setting-menu">
@@ -57,16 +57,16 @@ const User = () => {
                 </section>
                 <section className='imgBox'>
                     <ul>
-                        <li onClick={() => move('/detail')}>
+                        <li onClick={moveToDetail}>
                             <span className='descrip'>🩷 1 &nbsp; 💬 10</span>
                         </li>
-                        <li onClick={() => move('/detail')}>
+                        <li onClick={moveToDetail}>
                             <span className='descrip'>🩷 1 &nbsp; 💬 10</span>
                         </li>
-                        <li onClick={() => move('/detail')}>
+                        <li onClick={moveToDetail}>
                             <span className='descrip'>🩷 1 &nbsp; 💬 10</span>
                         </li>
-                        <li onClick={() => move('/detail')}>
+                        <li onClick={moveToDetail}>
                             <span className='descrip'>🩷 1 &nbsp; 💬 10</span>
                         </li>
                     </ul>
@@ -75,7 +75,7 @@ const User = () => {
 
             <footer>
                 <ul>
-                    <li className='home' onClick={() => move('/main')}></li>
+                    <li className='home' onClick={moveToMain}></li>
                     <li className='add'></li>
                     <li className='user on'></li>
                 </ul>

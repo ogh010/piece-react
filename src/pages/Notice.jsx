@@ -1,15 +1,16 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import useMove from '../hooks/useMove';
 
 const Notice = () => {
-    const navigate = useNavigate();
-    const move = (val) => {
-        navigate(val); // 이전 페이지로 이동
-    };
+    const moveToPrev = useMove(-1);
+    const moveToDetail = useMove('/detail');
+    const moveToMain = useMove('/main');
+    const moveToUser = useMove('/user');
+    
     return (
         <>
             <header>
-                <div className='back' onClick={() => move(-1)}></div>
+                <div className='back' onClick={moveToPrev}></div>
                 <div></div>
             </header>
 
@@ -18,17 +19,17 @@ const Notice = () => {
                     <div className='box'>
                         <span className='date'>2024년 6월 7일</span>
                         <div className='list'>
-                            <div className='item' onClick={()=>move('/detail')}>
+                            <div className='item' onClick={moveToDetail}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
                             </div>
-                            <div className='item' onClick={()=>move('/detail')}>
+                            <div className='item' onClick={moveToDetail}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
                             </div>
-                            <div className='item' onClick={()=>move('/detail')}>
+                            <div className='item' onClick={moveToDetail}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
@@ -38,7 +39,7 @@ const Notice = () => {
                     <div className='box'>
                         <span className='date'>2024년 6월 5일</span>
                         <div className='list'>
-                            <div className='item' onClick={()=>move('/detail')}>
+                            <div className='item' onClick={moveToDetail}>
                                 <div className='circle'></div>
                                 <p>winter님이 게시물을 좋아합니다.</p>
                                 <div className='img'></div>
@@ -48,7 +49,7 @@ const Notice = () => {
                     <div className='box'>
                         <span className='date'>2024년 6월 3일</span>
                         <div className='list'>
-                            <div className='item' onClick={()=>move('/detail')}>
+                            <div className='item' onClick={moveToDetail}>
                                 <div className='circle'></div>
                                 <p>winter님이 댓글을 달았습니다. : 맞팔해요~🩵</p>
                                 <div className='img'></div>
@@ -60,9 +61,9 @@ const Notice = () => {
 
             <footer>
                 <ul>
-                    <li className='home' onClick={() => move('/main')}></li>
+                    <li className='home' onClick={moveToMain}></li>
                     <li className='add'></li>
-                    <li className='user' onClick={() => move('/user')}></li>
+                    <li className='user' onClick={moveToUser}></li>
                 </ul>
             </footer>
         </>
