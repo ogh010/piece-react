@@ -36,7 +36,7 @@
 
 @mixin content-height {
     overflow-y: scroll;
-    height: calc(100vh - 110px);
+    height: calc(100vh - 100px);
 }
 
 @mixin background-img {
@@ -132,8 +132,8 @@
                 span{font-size: 14px; width: calc(100% - 32px); display: block; }
             }
             .menu{
-                width: 30px; height: 60px; background-image: url('./img/more.svg');
-                @include background-img; opacity: 0.7; cursor: pointer;
+                width: 30px; height: 60px; background-image: url('./img/more-horizontal.svg');
+                @include background-img; cursor: pointer;
             }
         }
         .content{
@@ -240,11 +240,12 @@
                     font-size: 14px;
                     display: block; transition: 0.2s;
                     opacity: 0; font-weight: bold;
+                    color: #fff;
                     &:hover {opacity: 1;}
                 }
             }
             & :hover{
-                background-color: #ffffff84;
+                background-color: #00000084;
             }
         }
     }

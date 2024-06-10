@@ -60,7 +60,7 @@ header{@include flex-between; background-color: #fff; height: 50px; padding: 0 1
 }
 
 footer{background-color: #fff; position: absolute; bottom: 0; width: 100%;
-    ul { @include flex-between; height: 60px; padding: 0 16px;
+    ul { @include flex-between; height: 50px; padding: 0 16px;
         > * {
             transition: 0.2s;
             &:hover{opacity: 0.5; cursor: pointer;}

@@ -14,7 +14,8 @@ const Profile = () => {
         </header>
 
         <main id='profile'>
-            프로필변경
+        
+        
         </main>
         
         <footer>

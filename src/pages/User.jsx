@@ -6,6 +6,7 @@ const User = () => {
     const moveToDetail = useMove('/detail');
     const moveToMain = useMove('/main');
     const moveToJoin = useMove('/join');
+    const moveToProfile = useMove('/profile');
 
     // 메뉴 토글
     const [ isMenuOpen, setIsMenuOpen ] = useState(false);
@@ -27,7 +28,7 @@ const User = () => {
                 <div className='setting' onClick={toggleMenu}>
                     {isMenuOpen && 
                          <ul className="setting-menu">
-                            <li className="menu-item" onClick={()=>{console.log('프로필 변경');}}>🙂 프로필 변경</li>
+                            <li className="menu-item" onClick={moveToProfile}>🙂 프로필 변경</li>
                             <li className="menu-item" onClick={handleLogout}>🫥 로그아웃</li>
                         </ul>
                     }
@@ -36,7 +37,7 @@ const User = () => {
 
             <main id='user'>
                 <section className='userBox'>
-                    <p className='id'>🩶 winter</p>
+                    <p className='id'>🩶 im_winter</p>
                     <div className='info'>
                         <div className='circle'></div>
                         <ul>
