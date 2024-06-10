@@ -58,6 +58,7 @@ header{@include flex-between; background-color: #fff; height: 50px; padding: 0 1
         &:hover{opacity: 1; cursor: pointer;}
     }
 }
+
 footer{background-color: #fff; position: absolute; bottom: 0; width: 100%;
     ul { @include flex-between; height: 60px; padding: 0 16px;
         > * {
@@ -111,4 +112,26 @@ footer{background-color: #fff; position: absolute; bottom: 0; width: 100%;
 @media screen and (max-width: 420px){
     #leftWrap{display: none;}
     #rightWrap{width: 100%;}
+}
+// 미디어쿼리 (다크모드)
+@media (prefers-color-scheme: dark){
+    header{
+        .logo{background-image: url('./img/logo01_G.png');}
+        .heart{background-image: url('./img/heart.png');
+            &:hover{animation: shaking 0.15s infinite;}
+        }
+        .back{background-image: url('./img/chevron-left-w.svg'); }
+        .next{background-image: url('./img/chevron-right-w.svg'); }
+        .close{background-image: url('./img/close-w.svg'); }
+        .setting{background-image: url('./img/settings-w.svg'); }
+    }
+    footer{
+        ul {
+            li { 
+                &.home{background-image: url('./img/home-w.svg'); }
+                &.add{background-image: url('./img/plus-circle-w.svg'); }
+                &.user{background-image: url('./img/user-w.svg'); }
+            }
+        }
+    }
 }

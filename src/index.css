@@ -53,7 +53,7 @@ h1 {
   }
 }
 
-/* light 모드 */
+/* dark 모드 */
 @media (prefers-color-scheme: dark) {
   :root {
     color: #ffffff;
@@ -68,6 +68,9 @@ h1 {
   .mainList article .bottom .gray{color: rgb(193, 193, 193);}
   #notice .noticeBox .box{background-color: rgba(87, 87, 87, 0); border-bottom : 1px solid rgba(170, 170, 170, 0.4)}
   #user .userBox{background-color: rgba(0, 0, 0, 0.514);}
+  .setting-menu{background-color:#3c3c3c}
+  .menu-item{border-bottom: 1px solid #5f5f5f;}
+
   /* 스크롤바 트랙 */
   ::-webkit-scrollbar-track {
     background: #ffffff94; /* 트랙의 배경색 */
