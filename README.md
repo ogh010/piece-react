@@ -1,5 +1,5 @@
 # piece-react 프로젝트 🍰
-![slice](https://capsule-render.vercel.app/api?type=slice&color=auto&height=200&text=Hi%20there👋&fontAlign=70&rotate=13&fontAlignY=25&desc=seulzzang's%20GitHub&descAlign=70.&descAlignY=44)
+![slice](https://capsule-render.vercel.app/api?type=slice&color=auto&height=200&text=Hi%20there👋&fontAlign=70&rotate=13&fontAlignY=25&desc=seulzzang's%20GitHub&descAlign=70.&descAlignY=44) 
 <img src="https://github.com/ogh010/piece-react/assets/72989911/481122d2-0e4b-4f27-9202-8c9017339c55" alt="metadog" width="200"/>
 
 
